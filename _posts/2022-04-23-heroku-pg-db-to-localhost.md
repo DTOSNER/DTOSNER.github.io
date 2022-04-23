@@ -10,7 +10,7 @@ This topic covers how to transfer data from the Postgres database of you applica
 
 ## Just commands
 ---
-```ruby
+```console
 cd rails/project/repo/path
 sudo service postgresql restart
 rails db:drop
@@ -41,7 +41,8 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d databas
 ### Delete content of actual database for project
 
 - Navigate to project
-```ruby
+
+```console
 cd rails/project/repo/path
 ```
 
@@ -50,7 +51,7 @@ cd rails/project/repo/path
 > Following commands delete all data at actual database on localhost
 {: .prompt-danger }
 
-```ruby
+```console
 sudo service postgresql restart
 rails db:drop
 rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
@@ -58,14 +59,14 @@ rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 ### Create empty database
 
-```ruby
+```console
 rails db:create
 rails db:migrate
 ```
 
 ### Restore data from downloaded backup
 
-```ruby
+```console
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d database_name '/location/of/downloaded/db/backup'
 ```
 
