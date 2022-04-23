@@ -9,7 +9,7 @@ tags: [rails, postgres, heroku, wsl2]
 # Migrate Postgres database from Heroku to localhost
 
 ## Just commands
-```console WSL2
+```console
 # WSL2
 cd rails/project/repo/path
 sudo service postgresql restart
@@ -22,6 +22,7 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d databas
 
 ----------------------------------------
 ## Step by step
+
 ### Create backup on heroku
 - Login to heroku
 - Select project
@@ -35,14 +36,16 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d databas
 - Click Download at newly created backup
 
 ### Delete content of actual database for project
+
 #### Navigate to project
 ```console
 # WSL2
 cd rails/project/repo/path
 ```
+
 #### Delete old database
 
-- > Following commands delete all data at actual database on localhost
+> Following commands delete all data at actual database on localhost
 {: .prompt-danger }
 
 ```console
