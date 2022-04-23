@@ -46,7 +46,7 @@ cd rails/project/repo/path
 ```
 
 - Delete old database
-- 
+
 > Following commands delete all data at actual database on localhost
 {: .prompt-danger }
 
