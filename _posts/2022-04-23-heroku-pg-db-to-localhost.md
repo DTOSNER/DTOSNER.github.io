@@ -9,7 +9,7 @@ tags: [rails, postgres, heroku, wsl2]
 This topic covers how to transfer data from the Postgres database of you application hosted on Heroku to your local machine. All commands are run in emulated Ubuntu under WSL2 on Windows 10.
 
 ## Just commands
-```console
+```ruby
 cd rails/project/repo/path
 sudo service postgresql restart
 rails db:drop
@@ -18,7 +18,7 @@ rails db:create
 rails db:migrate
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d database_name '/location/of/downloaded/db/backup'
 ```
-
+---
 ---
 ## Step by step
 
