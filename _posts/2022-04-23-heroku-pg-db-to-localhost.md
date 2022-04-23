@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Migrate Postgres DB from Heroku to local"
+title: "Migrate Postgres database from Heroku to localhost"
 date: 2022-04-22 19:00:00 -0000
 categories: [Heroku]
 tags: [rails, postgres, heroku, wsl2]
 ---
 
-# Migrate Postgres database from Heroku to localhost
+This topic covers how to transfer data from the Postgres database of you databse hosted on Heroku to your local machine.
 
 ## Just commands
 ```console
@@ -20,7 +20,7 @@ rails db:migrate
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d database_name '/location/of/downloaded/db/backup'
 ```
 
-----------------------------------------
+---
 ## Step by step
 
 ### Create backup on heroku
