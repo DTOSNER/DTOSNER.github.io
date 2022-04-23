@@ -6,7 +6,7 @@ categories: [Heroku]
 tags: [rails, postgres, heroku, wsl2]
 ---
 
-This topic covers how to transfer data from the Postgres database of you databse hosted on Heroku to your local machine.
+This topic covers how to transfer data from the Postgres database of you application hosted on Heroku to your local machine.
 
 ## Just commands
 ```console
