@@ -10,7 +10,6 @@ This topic covers how to transfer data from the Postgres database of you applica
 
 ## Just commands
 ```console
-# WSL2
 cd rails/project/repo/path
 sudo service postgresql restart
 rails db:drop
@@ -39,7 +38,6 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d databas
 
 #### Navigate to project
 ```console
-# WSL2
 cd rails/project/repo/path
 ```
 
@@ -49,7 +47,6 @@ cd rails/project/repo/path
 {: .prompt-danger }
 
 ```console
-# WSL2
 sudo service postgresql restart
 rails db:drop
 rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
@@ -57,13 +54,11 @@ rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 
 ### Create empty database
 ```console
-# WSL2
 rails db:create
 rails db:migrate
 ```
 
 ### Restore data from downloaded backup
-```console
 # WSL2
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d database_name '/location/of/downloaded/db/backup'
 ```
