@@ -37,7 +37,7 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d databas
 ### Delete content of actual database for project
 
 - Navigate to project
-```console
+```ruby
 cd rails/project/repo/path
 ```
 
@@ -46,20 +46,20 @@ cd rails/project/repo/path
 > Following commands delete all data at actual database on localhost
 {: .prompt-danger }
 
-```console
+```ruby
 sudo service postgresql restart
 rails db:drop
 rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 ```
 
 ### Create empty database
-```console
+```ruby
 rails db:create
 rails db:migrate
 ```
 
 ### Restore data from downloaded backup
-# WSL2
+```ruby
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d database_name '/location/of/downloaded/db/backup'
 ```
 
