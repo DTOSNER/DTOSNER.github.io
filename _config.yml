@@ -21,9 +21,9 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: DTOSNER                         # the main title
+title: Snuffle Truffle                 # the main title
 
-tagline: Knowledge base                # it will display as the sub-title
+tagline: Snuffing for technology truffles  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
