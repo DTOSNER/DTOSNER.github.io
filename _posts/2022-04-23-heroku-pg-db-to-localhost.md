@@ -36,12 +36,12 @@ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d databas
 
 ### Delete content of actual database for project
 
-#### Navigate to project
+- Navigate to project
 ```console
 cd rails/project/repo/path
 ```
 
-#### Delete old database
+- Delete old database
 
 > Following commands delete all data at actual database on localhost
 {: .prompt-danger }
