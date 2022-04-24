@@ -1,68 +1,60 @@
 ---
-title: Text and Typography
+title: Migrate Postgres database from Heroku to localhost
 author: cotes
 date: 2019-08-08 11:33:00 +0800
 categories: [Blogging, Demo]
-tags: [typography]
-math: true
-mermaid: true
-image:
-  path: /commons/devices-mockup.png
-  width: 800
-  height: 500
+tags: [rails, postgres, wsl2, heroku]
 ---
 
-This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
+This topic covers how to transfer data from the Postgres database of you application hosted on Heroku to your local machine. All commands are run in emulated Ubuntu under WSL2 on Windows 10.
 
 
-## Titles
+## Just commands
 ---
-# H1 - heading
+```console
+cd rails/project/repo/path
+sudo service postgresql restart
+rails db:drop
+rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+rails db:create
+rails db:migrate
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -U user -d database_name '/location/of/downloaded/db/backup'
+```
 
-<h2 data-toc-skip>H2 - heading</h2>
+## Step by step
 
-<h3 data-toc-skip>H3 - heading</h3>
+### Create backup on heroku
 
-<h4>H4 - heading</h4>
----
-<br>
+- Login to heroku
+- Select project
+- Go to resources
+- Select Heroku Postgres Add-on
+- Durability tab
+- Create Manual Backup
+- Wait
 
-## Paragraph
+### Download database backup
 
-I wandered lonely as a cloud
-
-That floats on high o'er vales and hills,
-
-When all at once I saw a crowd,
-
-A host, of golden daffodils;
-
-Beside the lake, beneath the trees,
-
-Fluttering and dancing in the breeze.
-
-## Lists
-
-### Ordered list
-
-1. Firstly
-2. Secondly
-3. Thirdly
-
-### Unordered list
-
-- Chapter
-  - Section
-    - Paragraph
+- Click Download at newly created backup
 
 ### Task list
 
-- [ ] TODO
-- [x] Completed
-- [ ] Defeat COVID-19
-  - [x] Vaccine production
-  - [ ] Economic recovery
-  - [ ] People smile again
+- Navigate to project
+
+```console
+cd rails/project/repo/path
+```
+
+- Delete old database
+
+> Following commands delete all data at actual database on localhost
+{: .prompt-danger }
+
+```console
+sudo service postgresql restart
+rails db:drop
+rails db:drop DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+```
 
 ### Description list
 
