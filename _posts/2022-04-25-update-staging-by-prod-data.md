@@ -3,7 +3,7 @@ title: "Trasfer all data from production stage on Heroku to staging stage (Postg
 author: DTOSNER
 date: 2022-04-25 19:00:00 -0000
 categories: [Heroku]
-tags: [rails, postgres, heroku, wsl2, aws s3]
+tags: [rails, postgres, heroku, wsl2, s3]
 ---
 
 This topic covers how to transfer data from production stage on Heroku to staging stage on Heroku. Data is composed by Postgres DB and photos on Amazon S3 service.
