@@ -1,5 +1,5 @@
 ---
-title: "Migrate Postgres database from Heroku to localhost"
+title: "Trasfer all data from production stage on Heroku to staging stage (Postgres DB + S3 bucket)"
 author: DTOSNER
 date: 2022-04-25 19:00:00 -0000
 categories: [Heroku]
