@@ -29,9 +29,43 @@ heroku pg:backups:restore "https://snuffle-truffle.s3.eu-west-1.amazonaws.com/db
 ## Step by step
 ---
 
-### Create backup of data on S3
+### S3
+
+#### Create backup of data on S3(staging)
 
 Download all data from S3 bucket for staging stage on Heroku.
 ```console
 aws s3 sync s3://staging-app-bucket C:\Users\snuffle_truffle\Downloads\prod_app_images --dryrun --profile s3_snuffle_truffle
 ```
+> Create backup also for production stage bucket.
+{: .prompt-tip }
+
+#### Remove all data from S3(staging)
+
+Delete all data from S3 bucket for staging stage on Heroku.
+```console
+aws s3 rm s3://staging-app-bucket --recursive --dryrun --profile s3_snuffle_truffle
+```
+
+#### Copy data from one bucket to another(prod-staging)
+```console
+aws s3 sync s3://prod-app-bucket s3://staging-app-bucket --dryrun --profile s3_snuffle_truffle
+```
+
+### Postgres
+
+#### Create backup of Postgres DB(staging)
+
+- Login to heroku
+- Select project
+- Go to resources
+- Select Heroku Postgres Add-on
+- Durability tab
+- Create Manual Backup
+- Wait
+- Click Download at newly created backup
+
+> Create backup also for production stage Postgres DB.
+{: .prompt-tip }
+
+#### Upload downloaded backup to S3
